@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="header">
+    <text class="icon">ℹ️</text>
+  </view>
+
+  <view class="content">
+    <view class="card">
+      <text class="card-title">应用名称</text>
+      <text class="card-value">待办事项</text>
+    </view>
+
+    <view class="card">
+      <text class="card-title">版本号</text>
+      <text class="card-value">{{version}}</text>
+    </view>
+
+    <view class="card">
+      <text class="card-title">开发者</text>
+      <text class="card-value">{{author}}</text>
+    </view>
+
+    <view class="card">
+      <text class="card-title">应用介绍</text>
+      <text class="card-value">{{description}}</text>
+    </view>
+
+    <view class="features">
+      <text class="features-title">功能特性</text>
+      <view class="feature-item">✓ 添加和删除待办事项</view>
+      <view class="feature-item">✓ 标记任务完成状态</view>
+      <view class="feature-item">✓ 筛选显示不同状态的任务</view>
+      <view class="feature-item">✓ 本地数据持久化存储</view>
+      <view class="feature-item">✓ 统计任务完成情况</view>
+    </view>
+
+    <view class="footer">
+      <text>感谢您的使用！</text>
+    </view>
+  </view>
+</view>

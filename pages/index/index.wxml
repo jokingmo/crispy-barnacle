@@ -1,0 +1,64 @@
+<view class="container">
+  <view class="header">
+    <text class="title">📝 待办事项</text>
+  </view>
+
+  <view class="input-section">
+    <input 
+      class="input-box" 
+      type="text" 
+      placeholder="添加新的待办事项..." 
+      value="{{inputValue}}"
+      bindinput="onInputChange"
+      bindconfirm="addTodo"
+    />
+    <button class="add-btn" bindtap="addTodo">添加</button>
+  </view>
+
+  <view class="filter-section">
+    <button 
+      class="filter-btn {{filter === 'all' ? 'active' : ''}}" 
+      data-filter="all"
+      bindtap="setFilter"
+    >全部</button>
+    <button 
+      class="filter-btn {{filter === 'active' ? 'active' : ''}}" 
+      data-filter="active"
+      bindtap="setFilter"
+    >进行中</button>
+    <button 
+      class="filter-btn {{filter === 'completed' ? 'active' : ''}}" 
+      data-filter="completed"
+      bindtap="setFilter"
+    >已完成</button>
+  </view>
+
+  <view class="todo-list">
+    <block wx:if="{{getDisplayTodos().length > 0}}">
+      <view 
+        class="todo-item {{item.completed ? 'completed' : ''}}" 
+        wx:for="{{getDisplayTodos()}}" 
+        wx:key="id"
+      >
+        <view class="todo-content" data-index="{{index}}" bindtap="toggleTodo">
+          <text class="checkbox">{{item.completed ? '✓' : '○'}}</text>
+          <text class="todo-text">{{item.text}}</text>
+        </view>
+        <view class="todo-delete" data-index="{{index}}" bindtap="deleteTodo">
+          <text>删除</text>
+        </view>
+      </view>
+    </block>
+    <view class="empty-state" wx:else>
+      <text>没有待办事项</text>
+    </view>
+  </view>
+
+  <view class="stats">
+    <text>总数: {{todos.length}} | 未完成: {{todos.filter(t => !t.completed).length}} | 已完成: {{todos.filter(t => t.completed).length}}</text>
+  </view>
+
+  <button class="clear-btn" bindtap="clearCompleted" wx:if="{{todos.some(t => t.completed)}}">
+    清空已完成
+  </button>
+</view>

@@ -1,0 +1,145 @@
+/**pages/index/index.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  padding: 20rpx;
+}
+
+.header {
+  margin: 30rpx 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.input-section {
+  display: flex;
+  margin-bottom: 30rpx;
+  gap: 10rpx;
+}
+
+.input-box {
+  flex: 1;
+  padding: 15rpx 20rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 8rpx;
+  background-color: white;
+  font-size: 28rpx;
+}
+
+.add-btn {
+  padding: 0 30rpx;
+  background-color: #07c160;
+  color: white;
+  border: none;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}
+
+.filter-section {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20rpx;
+  gap: 10rpx;
+}
+
+.filter-btn {
+  flex: 1;
+  padding: 10rpx 20rpx;
+  background-color: white;
+  border: 1rpx solid #ddd;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.filter-btn.active {
+  background-color: #07c160;
+  color: white;
+  border-color: #07c160;
+}
+
+.todo-list {
+  flex: 1;
+  margin-bottom: 20rpx;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  margin-bottom: 10rpx;
+  background-color: white;
+  border-radius: 8rpx;
+  box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.1);
+}
+
+.todo-item.completed {
+  background-color: #f9f9f9;
+}
+
+.todo-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding-right: 20rpx;
+}
+
+.checkbox {
+  font-size: 36rpx;
+  margin-right: 15rpx;
+  color: #07c160;
+}
+
+.todo-text {
+  font-size: 28rpx;
+  color: #333;
+  flex: 1;
+  word-break: break-all;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.todo-delete {
+  padding: 10rpx 15rpx;
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 6rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200rpx;
+  font-size: 32rpx;
+  color: #999;
+}
+
+.stats {
+  text-align: center;
+  padding: 15rpx;
+  background-color: white;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+
+.clear-btn {
+  background-color: #ff6b6b;
+  color: white;
+  margin-top: auto;
+}
